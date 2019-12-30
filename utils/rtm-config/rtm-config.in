@@ -26,7 +26,7 @@ init_variables()
 {
 # basic options
 rtm_cxx="@CXX@"
-rtm_cflags=`echo @CXXFLAGS@ -I@prefix@/include -I@coil_includedir@ -I@rtm_includedir@ -I@rtm_idldir@ | sed -e 's/^[ ]*//g' -e 's/ \{2,\}/ /g'`
+rtm_cflags=`echo -I@prefix@/include -I@coil_includedir@ -I@rtm_includedir@ -I@rtm_idldir@ | sed -e 's/^[ ]*//g' -e 's/ \{2,\}/ /g'`
 rtm_cflags_I=`echo $rtm_cflags | sed -e 's/-[^I][^ ]*//g' -e 's/^[ ]*//g' -e 's/ \{2,\}/ /g'`
 rtm_cflags_o=`echo $rtm_cflags | sed -e 's/-I[^ ]*//g' -e 's/^[ ]*//g' -e 's/ \{2,\}/ /g'`
 rtm_libs=`echo @LDFLAGS@ -L@libdir@ @LIBS@ -lRTC -lcoil | sed -e 's/^[ ]*//g' -e 's/ \{2,\}/ /g'`
